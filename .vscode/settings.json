@@ -1,0 +1,54 @@
+{
+  // 1. 保存时自动格式化代码
+  "editor.formatOnSave": true,
+
+  // 2. 设置 Prettier 为默认的 JavaScript/TypeScript 格式化工具
+  //    确保代码风格主要由 Prettier 来统一
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // 3. 保存时自动执行 ESLint 的自动修复命令 (如 --fix)
+  //    这会修复 ESLint 可以自动处理的问题，并与 Prettier 协作
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+
+  // 4. (可选但推荐) 为不同语言显式指定默认格式化工具，确保一致性
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // 1. 设置默认缩进大小为2个空格
+  "editor.tabSize": 2,
+
+  // 2. 启用时，按Tab键会插入空格而不是\t字符
+  "editor.insertSpaces": true,
+
+  // 3. 自动检测当前文件的缩进风格（建议关闭以强制统一）
+  "editor.detectIndentation": false
+}
