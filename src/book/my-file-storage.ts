@@ -5,7 +5,9 @@ const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     try {
       fs.mkdirSync('uploads');
-    } catch (e) {}
+    } catch {
+      // directory already exists
+    }
 
     cb(null, 'uploads');
   },

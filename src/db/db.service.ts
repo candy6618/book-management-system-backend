@@ -7,7 +7,7 @@ export class DbService {
   @Inject('OPTIONS')
   private options: DbModuleOptions;
 
-  async read() {
+  async read<T>(): Promise<T[]> {
     const filePath = this.options.path;
 
     try {
@@ -25,10 +25,11 @@ export class DbService {
       return [];
     }
 
-    return JSON.parse(str) as Record<string, unknown>[];
+    const data: unknown = JSON.parse(str);
+    return data as T[];
   }
 
-  async write(obj: Record<string, any>) {
+  async write<T>(obj: T[]) {
     await writeFile(this.options.path, JSON.stringify(obj || []), {
       encoding: 'utf-8',
     });
